@@ -1,0 +1,49 @@
+# -11-603
+
+//отражает массив относительно побочной диагонали
+
+import java.util.*;
+
+public class Lesson{
+
+	public static void main(String[] args){
+
+		int[][] a = new int[7][7];
+		int wall = a.length - 1;
+
+		Random rand = new Random();
+
+		for(int y = 0; y < a.length; y++){ //заполняем массив рандомно и выводим его 
+
+			for(int x = 0; x < a[0].length; x++){
+
+				a[y][x] = rand.nextInt(9);
+
+				System.out.print(a[y][x] + "  ");
+			}
+			System.out.println();
+		}
+
+		for(int y = 0; y < a.length - 1; y++){ // переворачиваем массив
+
+			for(int x = 0; x < wall; x++){
+
+				int save = a[y][x];
+				a[y][x] = a[(a.length - 1) - x][(a[0].length - 1) - y];
+				a[(a.length - 1) - x][(a[0].length - 1) - y] = save;
+			}
+			wall--;
+		}
+
+		System.out.print("\n\n");
+
+		for(int y = 0; y < a.length; y++){ //выводим получившийся массив
+
+			for(int x = 0; x < a[0].length; x++){
+
+				System.out.print(a[y][x] + "  ");
+			}
+			System.out.println();
+		}
+	}
+}
