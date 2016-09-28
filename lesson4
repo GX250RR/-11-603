@@ -1,0 +1,37 @@
+# -11-603
+
+//ПРОГРАММА СДИВГАЕТ МАССИВ
+
+import java.util.*;
+
+public class Lesson{
+
+	public static void main(String[] args){
+
+	int[] a = new int[10];
+
+	Random rand = new Random();
+
+	for(int i = 0; i < a.length; i++){// заполняем рандомно массив
+
+		a[i] = rand.nextInt(100) - 50;
+		System.out.print(a[i] + " ");
+	}
+
+	System.out.print("\n");
+	Scanner scan = new Scanner(System.in);
+
+
+	for(int i = scan.nextInt() - 1; i < a.length - 1; i++){//сдвигаем массив влево
+
+		a[i] = a[i+1];
+
+	}
+
+	for(int i = 0; i < a.length - 1;i++)
+	{
+
+		System.out.print(a[i] + " ");
+	}
+}
+}
