@@ -1,0 +1,59 @@
+# -11-603
+
+//простое число
+
+import java.util.*;
+
+public class Lesson{
+
+	public static void main(String[] args){
+
+		int[] a = new int[10];
+		boolean firstNumber = false, secondNumber = false, first = false, second = false;
+		int[] delit = {1, 2, 3, 5, 7};
+
+		Random rand = new Random();
+
+		a[0] = rand.nextInt(2000);
+
+		for(int i = 1; i < a.length; i++){
+
+			a[i] = rand.nextInt(2000);
+
+
+		for(int delitel = 0; delitel < delit.length; delitel++){// вычесляет принадлежность числа к массиву делителей
+
+					if(a[i-1] == delit[delitel]){//для пердыдущего числа
+
+						first = true;
+					}
+
+					if(a[i] == delit[delitel]){// для введенного
+
+						second = true;
+					}
+		}
+			
+			for(int j = 2; j < (int)(Math.sqrt(a[i-1])); j++){
+
+				if(a[i - 1] % j == 0)
+					firstNumber = true;
+			}
+
+			for(int j = 2; j < (int)(Math.sqrt(a[i])); j++){
+
+				if(a[i] % j == 0)
+					secondNumber = true;
+				}
+
+			if((!firstNumber || first) && (secondNumber && !second))
+				System.out.println(a[i-1]);                             //выводит простое число
+
+		}
+
+		System.out.print("\n");
+
+		for(int i = 0; i < a.length; i++)//выводит сам массив
+			System.out.print(a[i] + " ");
+	}
+}
