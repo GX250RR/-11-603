@@ -1,0 +1,75 @@
+# -11-603
+
+//пересечение матриц
+
+import java.util.*;
+
+public class Lesson{
+
+	public static void main(String[] args){
+
+		int[] a = new int[20];
+		int[] b = new int[10];
+		int[] save =  new int[a.length];
+		int k = 0;
+		
+		Random rand = new Random();
+
+		for(int i = 0; i < a.length; i++){//заполняем массив А рандомно
+
+			a[i] = rand.nextInt(100) - 50;
+			System.out.print(a[i] + " ");
+		}
+
+		System.out.print("\n");
+
+		for(int i = 0; i < b.length; i++){//заполняем массив Б рандомно
+
+			b[i] = rand.nextInt(100) - 50;
+			System.out.print(b[i] + " ");
+		}
+
+			System.out.print("\n");
+
+
+		for(int i = 0; i < a.length; i++){//ищем одинакое значение элементов
+
+			for(int j = 0; j < b.length; j++){
+
+					if(a[i] == b[j]){
+
+						save[k] = a[i];
+						k++;
+					}
+
+				}
+			}
+
+		if(k != 0){ // если есть хотя бы одно свопадение
+				for(int i = k; i > 0; i--){//сортируем
+
+				for(int j = 0; j < i; j++){
+
+					if(save[j] > save[j+1]){
+
+						int saveElement = a[j+1];
+						save[j+1] = save[j];
+						save[j] = saveElement;	
+						}
+		
+			}
+		}
+	
+
+		System.out.print(save[0] + " "); //выводим элементы
+
+			for(int i = 1; i <= k-1; i++){
+
+				if(save[i] != save[i-1]){
+
+					System.out.print(save[i] + " ");
+				}
+			}
+		}
+	} 
+}
