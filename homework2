@@ -1,0 +1,38 @@
+# -11-603
+
+//Программа ищет локальный минимум в массиве
+import java.util.*;
+
+public class Homework{
+
+  public static void main(String[] args){
+
+    int a[] = new int[10];
+
+    Random rand = new Random();
+
+    for(int i = 0; i < a.length; i++){//заполняем масси рандомно
+
+      a[i] = rand.nextInt(101)-50;
+
+    }
+
+    for(int i = 0; i < a.length; i++){ //Выводим массив целиком
+
+      System.out.print(a[i] + " ");
+
+    }
+
+    for(int i = 1; i < (a.length - 1); i++){//ищем локальный минимум
+
+      if((a[i] < a[i-1]) && (a[i] < a[i+1])){
+
+        System.out.print("\n"  + a[i] + " ");
+
+      }//конец условия
+
+    }//конец цикла
+
+  }
+
+}
