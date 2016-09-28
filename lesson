@@ -1,0 +1,17 @@
+# -11-603
+
+// ВЫВОДИМ МАССИВ В ОБРАТНОМ ВИДЕ
+
+public class Lesson{
+
+	public static void main(String[] args){
+
+		int a[] = {1,2,3,4,5,6,7,8};
+
+		for(int i=7;i>=0;i--){
+
+			System.out.println(a[i]);
+
+		}
+	}
+}
