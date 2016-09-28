@@ -1,0 +1,50 @@
+# -11-603
+
+//сортировка строк в масстиве 
+
+import java.util.*;
+
+public class Lesson{
+
+	public static void main(String[] args){
+
+		int[][] a = new int[5][5];
+
+		Random rand = new Random();
+
+		for(int i = 0; i < a.length; i++){         //рандомно заполняем массив
+			for(int j = 0; j < a[0].length; j++){
+
+				a[i][j] = rand.nextInt(100);
+
+				System.out.print(a[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		for(int i = 0; i < a.length; i++){
+
+			for(int wall = a[0].length - 1; wall > 0; wall--){//сортируем
+
+				for(int j = 0; j < wall; j++){
+
+					if(a[i][j] > a[i][j + 1]){
+						int save = a[i][j + 1];
+						a[i][j + 1] = a[i][j];
+						a[i][j] = save;
+					}
+				}
+			}
+		}
+
+		System.out.println();
+
+		for(int i = 0; i < a.length; i++){
+			for(int j = 0; j < a[0].length; j++){//выводим результат
+
+				System.out.print(a[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
