@@ -1,0 +1,26 @@
+# -11-603
+
+//Программа ищет минимум в массиве
+
+public class Homework{
+
+  public static void main(String[] args){
+
+    int[] a={2, 5, 9, 22, -31, -40, 45, 2, 4 };
+    int min = a[0];
+
+    for(int i = 1; i < a.length; i++){
+
+      if(a[i]<min){
+
+        min = a[i];
+
+      }//конец условия
+
+    }//конец цикла
+
+System.out.println("Minimum: " + min);
+
+  }
+
+}
