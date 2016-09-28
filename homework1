@@ -1,0 +1,26 @@
+# -11-603
+
+//Программа ищет максимум в массиве
+
+public class Homework{
+
+  public static void main(String[] args){
+
+    int[] a={2, 5, 9, 22, -31, -40, 45, 2, 4 };
+    int max = a[0];
+
+    for(int i = 1; i < a.length; i++){
+
+      if(a[i] > max){
+
+        max = a[i];
+
+      }//конец условия
+
+    }//конец цикла
+
+System.out.println("Miximum: " + max);
+
+  }
+
+}
